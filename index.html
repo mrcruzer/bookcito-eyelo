@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gana hasta $300,000 COP</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#f5f5f5;
+  text-align:center;
+}
+
+.container{
+  max-width:400px;
+  margin:auto;
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  margin-top:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1{
+  color:#e60023;
+}
+
+p{
+  font-size:16px;
+}
+
+.btn{
+  display:block;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:8px;
+  text-decoration:none;
+  margin-top:20px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.users{
+  font-size:14px;
+  color:gray;
+  margin-top:10px;
+}
+
+.timer{
+  font-size:20px;
+  color:red;
+  margin-top:10px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎁 Gana hasta $300,000 COP</h1>
+
+<p>Estamos seleccionando personas en Colombia 🇨🇴</p>
+
+<p>Participa ahora completando el registro</p>
+
+<div class="timer" id="countdown">02:00</div>
+
+<a href="https://eylome.lat/lgNGhlok/8462571433799453780119a123/" class="btn">
+👉 PARTICIPAR AHORA
+</a>
+
+<div class="users">
+🔥 52 personas participando ahora
+</div>
+
+</div>
+
+<script>
+let time = 120;
+let countdown = document.getElementById("countdown");
+
+setInterval(() => {
+  let min = Math.floor(time / 60);
+  let sec = time % 60;
+  countdown.innerHTML = `${min}:${sec < 10 ? '0'+sec : sec}`;
+  time--;
+}, 1000);
+</script>
+
+</body>
+</html>
