@@ -3,158 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Participa por premios en efectivo</title>
 
-<title>Gana hasta $300,000 COP</title>
-
-<!-- META OG (IMPORTANTE PARA FACEBOOK) -->
-<meta property="og:title" content="🎁 Gana hasta $300,000 COP">
-<meta property="og:description" content="Participa ahora - Cupos limitados">
-<meta property="og:image" content="https://TU-IMAGEN-AQUI.jpg">
+<!-- Open Graph (para que FB muestre imagen bonita) -->
+<meta property="og:title" content="🎁 Participa por premios en efectivo">
+<meta property="og:description" content="Cupos limitados en Colombia 🇨🇴">
+<meta property="og:image" content="https://TU-IMAGEN.jpg">
 <meta property="og:type" content="website">
 
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];
-t=b.createElement(e);t.async=!0;
-t.src=v;
-s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', 'TU_PIXEL_ID');
-fbq('track', 'PageView');
-</script>
-
 <style>
-body{
-  font-family: Arial;
-  background:#000;
-  color:white;
-  text-align:center;
-}
-
-.container{
-  max-width:420px;
-  margin:auto;
-  padding:20px;
-}
-
-h1{
-  font-size:28px;
-  color:#00ff88;
-  animation: zoom 1s infinite alternate;
-}
-
-@keyframes zoom{
-  from{transform:scale(1);}
-  to{transform:scale(1.05);}
-}
-
-.btn{
-  background:#00ff88;
-  color:black;
-  padding:15px;
-  display:block;
-  border-radius:10px;
-  margin-top:20px;
-  font-weight:bold;
-  text-decoration:none;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.1);}
-  100%{transform:scale(1);}
-}
-
-.chat{
-  background:#111;
-  border-radius:10px;
-  padding:10px;
-  margin-top:20px;
-  text-align:left;
-}
-
-.msg{
-  background:#222;
-  padding:10px;
-  border-radius:10px;
-  margin:5px 0;
-}
-
-.green{
-  background:#00ff88;
-  color:black;
-}
-
-.testimonio{
-  background:#111;
-  padding:10px;
-  border-radius:10px;
-  margin-top:15px;
-  font-size:14px;
-}
-
-.timer{
-  color:red;
-  font-size:20px;
-  margin-top:10px;
-}
+body{font-family:Arial;margin:0;background:#0b0b0b;color:#fff;text-align:center}
+.wrap{max-width:420px;margin:auto;padding:20px}
+.card{background:#111;border-radius:14px;padding:18px;box-shadow:0 10px 25px rgba(0,0,0,.4)}
+h1{margin:0 0 10px;color:#00ff88}
+.badge{display:inline-block;background:#222;padding:6px 10px;border-radius:999px;margin-bottom:10px}
+.btn{display:block;background:#00ff88;color:#000;padding:14px;border-radius:10px;text-decoration:none;font-weight:700;margin-top:14px}
+.small{opacity:.8;font-size:13px}
+.timer{color:#ff4d4d;font-weight:700;margin-top:10px}
+ul{list-style:none;padding:0;text-align:left}
+li{margin:8px 0}
+.check{color:#00ff88;margin-right:6px}
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<div class="wrap">
+  <div class="card">
+    <div class="badge">Colombia 🇨🇴</div>
+    <h1>🎁 Participa por premios en efectivo</h1>
+    <p class="small">Estamos seleccionando participantes por tiempo limitado.</p>
 
-<h1>🎁 Gana hasta $300,000 COP</h1>
+    <ul>
+      <li><span class="check">✔</span> Registro rápido</li>
+      <li><span class="check">✔</span> Sin complicaciones</li>
+      <li><span class="check">✔</span> Cupos limitados</li>
+    </ul>
 
-<p>Seleccionando personas en Colombia 🇨🇴</p>
+    <div class="timer" id="t">02:00</div>
 
-<div class="timer" id="countdown">02:00</div>
-
-<a href="https://eylome.lat/lgNGhlok/8462571433799453780119a123/" class="btn">
-👉 PARTICIPAR AHORA
-</a>
-
-<!-- CHAT ESTILO WHATSAPP -->
-<div class="chat">
-  <div class="msg">Hola 👋 ¿esto es real?</div>
-  <div class="msg green">Sí, estamos seleccionando personas 🎁</div>
-  <div class="msg">¿Cómo participo?</div>
-  <div class="msg green">Solo entra y completa el registro</div>
-</div>
-
-<!-- TESTIMONIOS -->
-<div class="testimonio">⭐ “Me registré y fue súper fácil”</div>
-<div class="testimonio">⭐ “Rápido y sin complicaciones”</div>
-<div class="testimonio">⭐ “Vale la pena intentarlo”</div>
-
+    <a href="/landing.html" class="btn">Continuar</a>
+    <p class="small">Al continuar aceptas ver los detalles de la promoción.</p>
+  </div>
 </div>
 
 <script>
-// contador
-let time = 120;
-let el = document.getElementById("countdown");
-
-setInterval(()=>{
-  let m = Math.floor(time/60);
-  let s = time%60;
-  el.innerHTML = `${m}:${s<10?'0'+s:s}`;
-  time--;
-},1000);
-
-// TRACK CLICK
-document.querySelector(".btn").addEventListener("click", function(){
-  fbq('track', 'Lead');
-});
+let time=120, el=document.getElementById('t');
+setInterval(()=>{let m=Math.floor(time/60),s=time%60;
+el.textContent=`${m}:${s<10?'0'+s:s}`; if(time>0) time--;},1000);
 </script>
 
 </body>
