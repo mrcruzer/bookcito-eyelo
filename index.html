@@ -3,57 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gana hasta $300,000 COP</title>
+
+<!-- META OG (IMPORTANTE PARA FACEBOOK) -->
+<meta property="og:title" content="🎁 Gana hasta $300,000 COP">
+<meta property="og:description" content="Participa ahora - Cupos limitados">
+<meta property="og:image" content="https://TU-IMAGEN-AQUI.jpg">
+<meta property="og:type" content="website">
+
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];
+t=b.createElement(e);t.async=!0;
+t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', 'TU_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
 
 <style>
 body{
-  font-family: Arial, sans-serif;
-  margin:0;
-  background:#f5f5f5;
+  font-family: Arial;
+  background:#000;
+  color:white;
   text-align:center;
 }
 
 .container{
-  max-width:400px;
+  max-width:420px;
   margin:auto;
-  background:white;
   padding:20px;
-  border-radius:10px;
-  margin-top:20px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 h1{
-  color:#e60023;
+  font-size:28px;
+  color:#00ff88;
+  animation: zoom 1s infinite alternate;
 }
 
-p{
-  font-size:16px;
+@keyframes zoom{
+  from{transform:scale(1);}
+  to{transform:scale(1.05);}
 }
 
 .btn{
-  display:block;
-  background:#25D366;
-  color:white;
+  background:#00ff88;
+  color:black;
   padding:15px;
-  border-radius:8px;
-  text-decoration:none;
+  display:block;
+  border-radius:10px;
   margin-top:20px;
-  font-size:18px;
   font-weight:bold;
+  text-decoration:none;
+  animation: pulse 1.5s infinite;
 }
 
-.users{
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+.chat{
+  background:#111;
+  border-radius:10px;
+  padding:10px;
+  margin-top:20px;
+  text-align:left;
+}
+
+.msg{
+  background:#222;
+  padding:10px;
+  border-radius:10px;
+  margin:5px 0;
+}
+
+.green{
+  background:#00ff88;
+  color:black;
+}
+
+.testimonio{
+  background:#111;
+  padding:10px;
+  border-radius:10px;
+  margin-top:15px;
   font-size:14px;
-  color:gray;
-  margin-top:10px;
 }
 
 .timer{
-  font-size:20px;
   color:red;
+  font-size:20px;
   margin-top:10px;
-  font-weight:bold;
 }
 </style>
 </head>
@@ -64,9 +116,7 @@ p{
 
 <h1>🎁 Gana hasta $300,000 COP</h1>
 
-<p>Estamos seleccionando personas en Colombia 🇨🇴</p>
-
-<p>Participa ahora completando el registro</p>
+<p>Seleccionando personas en Colombia 🇨🇴</p>
 
 <div class="timer" id="countdown">02:00</div>
 
@@ -74,22 +124,37 @@ p{
 👉 PARTICIPAR AHORA
 </a>
 
-<div class="users">
-🔥 52 personas participando ahora
+<!-- CHAT ESTILO WHATSAPP -->
+<div class="chat">
+  <div class="msg">Hola 👋 ¿esto es real?</div>
+  <div class="msg green">Sí, estamos seleccionando personas 🎁</div>
+  <div class="msg">¿Cómo participo?</div>
+  <div class="msg green">Solo entra y completa el registro</div>
 </div>
+
+<!-- TESTIMONIOS -->
+<div class="testimonio">⭐ “Me registré y fue súper fácil”</div>
+<div class="testimonio">⭐ “Rápido y sin complicaciones”</div>
+<div class="testimonio">⭐ “Vale la pena intentarlo”</div>
 
 </div>
 
 <script>
+// contador
 let time = 120;
-let countdown = document.getElementById("countdown");
+let el = document.getElementById("countdown");
 
-setInterval(() => {
-  let min = Math.floor(time / 60);
-  let sec = time % 60;
-  countdown.innerHTML = `${min}:${sec < 10 ? '0'+sec : sec}`;
+setInterval(()=>{
+  let m = Math.floor(time/60);
+  let s = time%60;
+  el.innerHTML = `${m}:${s<10?'0'+s:s}`;
   time--;
-}, 1000);
+},1000);
+
+// TRACK CLICK
+document.querySelector(".btn").addEventListener("click", function(){
+  fbq('track', 'Lead');
+});
 </script>
 
 </body>
